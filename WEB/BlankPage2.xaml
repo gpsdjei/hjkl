@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="WEB.BlankPage2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WEB"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Loaded="Grid_Loaded">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="ЗАКЛАДКИ" Grid.Row="0" FontSize="45" HorizontalAlignment="Center"/>
+        <Button Grid.Row="0" Content="Удалить все закладки" HorizontalAlignment="Right" FontSize="18" Click="Button_Click"/>
+        <Button Grid.Row="0" Content="Покинуть это окно" HorizontalAlignment="Left" FontSize="18" Click="Button_Click_1"/>
+        <MenuFlyoutSeparator Grid.Row="1"/>
+        <ListBox x:Name="historyList" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Tapped="historyList_Tapped"/>
+        <MenuFlyoutSeparator Grid.Row="3"/>
+        <MenuFlyoutSeparator Background="Transparent" Grid.Row="4"/>
+    </Grid>
+</Page>
