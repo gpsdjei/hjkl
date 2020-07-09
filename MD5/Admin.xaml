@@ -1,0 +1,196 @@
+﻿<Page
+    x:Class="MD5.Admin"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MD5"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Loaded="Grid_Loaded">
+        <Pivot x:Name="pivot" Title="Администратор" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <PivotItem Header="Дисциплины">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <ListBox x:Name="listDisp" Grid.Row="0" Grid.ColumnSpan="2"/>
+                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                        <Button x:Name="backBTN" Margin="0,0,0,10" Click="backBTN_Click" HorizontalAlignment="Right">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+                                        <Ellipse Fill="SlateGray" Height="50" Width="50"/>
+                                        <SymbolIcon Symbol="Back"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="1">
+                        <Button x:Name="addDisciplineBTN" Margin="0,0,0,10" Click="addDisciplineBTNCLICK" HorizontalAlignment="Right">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+                                        <Ellipse Fill="SlateGray" Height="50" Width="50"/>
+                                        <SymbolIcon Symbol="Add"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button x:Name="delDisciplineBTN" Margin="0,0,0,10" Click="delDisciplineBTNCLICK" HorizontalAlignment="Right">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+                                        <Ellipse Fill="SlateGray" Height="50" Width="50" />
+                                        <SymbolIcon Symbol="Delete"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox x:Name="editDisciplineTXT" PlaceholderText="Введите новое название дисциплины" Height="50" Margin="0,0,0,10" Visibility="Collapsed" KeyDown="editDisciplineTXTKEYDOWN"/>
+                            <Button x:Name="editDisciplineBTN" Margin="0,0,0,10" Click="editDisciplineBTNCLICK">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Grid>
+                                            <Ellipse Fill="SlateGray" Height="50" Width="50"/>
+                                            <SymbolIcon Symbol="Edit" x:Name="editSymbol" />
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </StackPanel>
+                        <Button x:Name="refreshDisciplineBTN" Margin="0,0,0,10" Click="refreshDisciplineBTNCLICK" HorizontalAlignment="Right">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+                                        <Ellipse Fill="SlateGray" Height="50" Width="50"/>
+                                        <SymbolIcon Symbol="Refresh"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="Группы">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <ListBox x:Name="groupList" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    <StackPanel Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                        <Button x:Name="addGroupBTN" Margin="0,0,0,10" Click="addGroupBTNCLICK" HorizontalAlignment="Right">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+                                        <Ellipse Fill="SlateGray" Height="50" Width="50"/>
+                                        <SymbolIcon Symbol="Add"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button x:Name="delGroupBTN" Margin="0,0,0,10" Click="delGroupBTNCLICK" HorizontalAlignment="Right">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+                                        <Ellipse Fill="SlateGray" Height="50" Width="50" />
+                                        <SymbolIcon Symbol="Delete"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button x:Name="addExcelBTN" Margin="0,0,0,10" Click="addExcelBTN_Click" HorizontalAlignment="Right">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+                                        <Ellipse Fill="SlateGray" Height="50" Width="50"/>
+                                        <SymbolIcon Symbol="Save"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <!--<StackPanel Orientation="Horizontal">
+                            <TextBox x:Name="editGroupTXT" PlaceholderText="Введите новое название группы" Height="50" Margin="0,0,0,10" Visibility="Collapsed" KeyDown="editGroupTXTKEYDOWN"/>
+                            <Button x:Name="editGroupBTN" Margin="0,0,0,10" Click="editGroupBTNCLICK">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Grid>
+                                            <Ellipse Fill="SlateGray" Height="50" Width="50"/>
+                                            <SymbolIcon Symbol="Edit" x:Name="editSymbol" />
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </StackPanel>-->
+                        <Button x:Name="refreshGroupBTN" Margin="0,0,0,0" HorizontalAlignment="Right" Click="refreshGroupBTNCLICK">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+                                        <Ellipse Fill="SlateGray" Height="50" Width="50"/>
+                                        <SymbolIcon Symbol="Refresh"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="Пользователи">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <controls:DataGrid x:Name="dataG" AutoGenerateColumns="True" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsReadOnly="True"/>
+                    <StackPanel Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                        <Button x:Name="addUserBTN" Margin="0,0,0,10" Click="addUserBTNCLICK" HorizontalAlignment="Right">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+                                        <Ellipse Fill="SlateGray" Height="50" Width="50"/>
+                                        <SymbolIcon Symbol="Add"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button x:Name="delUserBTN" Margin="0,0,0,10" Click="delUserBTNCLICK" HorizontalAlignment="Right">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+                                        <Ellipse Fill="SlateGray" Height="50" Width="50" />
+                                        <SymbolIcon Symbol="Delete"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button x:Name="editUserBTN" Margin="0,0,0,10" Click="editUserBTNCLICK">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+                                        <Ellipse Fill="SlateGray" Height="50" Width="50"/>
+                                        <SymbolIcon Symbol="Edit" x:Name="editSymbol" />
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button x:Name="refreshUserBTN" Margin="0,0,0,10" Click="refreshUserBTNCLICK" HorizontalAlignment="Right">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+                                        <Ellipse Fill="SlateGray" Height="50" Width="50"/>
+                                        <SymbolIcon Symbol="Refresh"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </PivotItem>
+        </Pivot>
+    </Grid>
+</Page>

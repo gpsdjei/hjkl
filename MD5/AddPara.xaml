@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="MD5.AddPara"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MD5"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Создание занятия и выставление оценки"
+    PrimaryButtonText="Оформить"
+    SecondaryButtonText="Отмена"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick">
+
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <ComboBox x:Name="SelectGroup" PlaceholderText="Выберите группу" HorizontalAlignment="Stretch" SelectionChanged="SelectGroup_SelectionChanged"/>
+            <MenuFlyoutSeparator Background="Transparent"/>
+            <ComboBox x:Name="SelectDisc" PlaceholderText="Выберите дисциплину" HorizontalAlignment="Stretch"/>
+            <MenuFlyoutSeparator Background="Transparent"/>
+            <DatePicker x:Name="SelectDate" HorizontalAlignment="Stretch" DateChanged="SelectDate_DateChanged"/>
+            <MenuFlyoutSeparator Background="Transparent"/>
+            <ComboBox x:Name="SelectStudent" PlaceholderText="Выберите студента" HorizontalAlignment="Stretch"/>
+            <MenuFlyoutSeparator Background="Transparent"/>
+            <ComboBox x:Name="SelectRating" PlaceholderText="Выберите оценку" HorizontalAlignment="Stretch"/>
+        </StackPanel>
+    </Grid>
+</Page>

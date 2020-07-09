@@ -1,0 +1,17 @@
+﻿<Page
+    x:Class="MD5.Student"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MD5"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <ComboBox x:Name="selDISCCMB" HorizontalAlignment="Stretch" FontSize="25" SelectionChanged="selDISCCMB_SelectionChanged"/>
+            <ListBox x:Name="listRATING" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        </StackPanel>
+    </Grid>
+</Page>

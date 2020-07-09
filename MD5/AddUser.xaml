@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="MD5.AddUser"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MD5"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+     Title="Добавление пользователя"
+    PrimaryButtonText="Добавить"
+    CloseButtonText="Отмена"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBox x:Name="login" Text="" TextWrapping="Wrap" PlaceholderText="Введите логин" FontSize="20" MaxLength="15" BeforeTextChanging="loginTextChange"/>
+            <MenuFlyoutSeparator Background="Transparent"/>
+            <PasswordBox x:Name="pass1" FontSize="20" PlaceholderText="Введите пароль" MaxLength="20"/>
+            <MenuFlyoutSeparator Background="Transparent"/>
+            <PasswordBox x:Name="pass2" FontSize="20" PlaceholderText="Повторите пароль" MaxLength="20"/>
+            <StackPanel Orientation="Horizontal">
+                <DatePicker x:Name="date"/>
+                <AppBarSeparator/>
+                <ToggleButton x:Name="pol" Content="Пол" Checked="pol_Checked" Unchecked="pol_Unchecked" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <TextBox x:Name="name" TextWrapping="Wrap" PlaceholderText="Введите имя" FontSize="20" MaxLength="15"/>
+            <MenuFlyoutSeparator Background="Transparent"/>
+            <TextBox x:Name="mobile" TextWrapping="Wrap" PlaceholderText="Введите номер телефона" FontSize="20" MaxLength="11" BeforeTextChanging="namberChange"/>
+            <MenuFlyoutSeparator Background="Transparent"/>
+            <ComboBox x:Name="cmbSelect" SelectionChanged="cmbSelect_SelectionChanged" HorizontalAlignment="Stretch" PlaceholderText="Выберите должность" />
+            <MenuFlyoutSeparator Background="Transparent"/>
+            <ComboBox x:Name="cmbGroup" SelectionChanged="cmbGroup_SelectionChanged" HorizontalAlignment="Stretch" PlaceholderText="Выберите группу (только для студента)"/>
+        </StackPanel>
+    </Grid>
+
+    <Grid>
+
+    </Grid>
+</Page>
